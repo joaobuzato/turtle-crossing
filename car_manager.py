@@ -12,8 +12,8 @@ class CarManager:
         self.car_speed = STARTING_MOVE_DISTANCE
 
     def generate_car(self):
-        # it is a random generation of cars, i generates a car for each 3 updates of the screen
-        if random.randint(1, 4) == 3:
+        # it is a random generation of cars, i generates a car for each 5 updates of the screen
+        if random.randint(1, 6) == 3:
             car = Turtle()
             car.penup()
             car.setheading(180)

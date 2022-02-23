@@ -18,8 +18,3 @@ class Player(Turtle):
 
     def reset_position(self):
         self.goto(STARTING_POSITION)
-
-    def check_finish(self):
-        if self.ycor() >= FINISH_LINE_Y:
-            self.reset_position()
-
