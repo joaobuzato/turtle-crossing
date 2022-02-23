@@ -17,7 +17,10 @@ screen.onkey(key="Up", fun=player.move)
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
+    screen.update()
     player.check_finish()
     car_manager.generate_car()
     car_manager.move_cars()
-    screen.update()
+    if car_manager.check_crash(player):
+        player.reset_position()
+

@@ -1,7 +1,7 @@
 from turtle import Turtle
 import random
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
-LANES_Y = [-280, -240, -200, -160, -120, -80, -40, 0, 40, 80, 280, 240, 200, 160, 120]
+LANES_Y = [-240, -200, -160, -120, -80, -40, 0, 40, 80, 240, 200, 160, 120]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 
@@ -36,3 +36,10 @@ class CarManager:
 
     def reset_speed(self):
         self.car_speed = STARTING_MOVE_DISTANCE
+
+    def check_crash(self, player):
+        for car in cars:
+            if player.distance(car) < 20 and player.ycor() > car.ycor()-15:
+                return True
+
+        return False
